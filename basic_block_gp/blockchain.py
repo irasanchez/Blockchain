@@ -152,7 +152,9 @@ def mine():
 @app.route('/chain', methods=['GET'])
 def full_chain():
     response = {
-        # TODO: Return the chain and its current length
+        # Return the chain and its current length
+        "chain": blockchain.chain,
+        "chain_length": len(blockchain.chain)
     }
     return jsonify(response), 200
 
